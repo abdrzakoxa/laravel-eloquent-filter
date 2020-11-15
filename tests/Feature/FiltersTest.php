@@ -20,10 +20,11 @@ class FiltersTest extends TestCase
         Carbon::setTestNow(now()->addMonth());
         $targetModel = $this->createUser($this->faker->unique()->name, $this->faker->email, null);
 
+        $created_at = $targetModel->created_at->toImmutable();
         $searchedData = [
             'created_between' => [
-                $targetModel->created_at->clone()->subDay(),
-                $targetModel->created_at->clone()->addDay(),
+                $created_at->subDay(),
+                $created_at->addDay(),
             ],
         ];
 

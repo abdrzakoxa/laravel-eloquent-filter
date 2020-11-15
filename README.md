@@ -130,6 +130,7 @@ Also, you can use only handle method
 
 namespace App\Models;
 
+use App\EloquentFilters\NameFilter;
 use Abdrzakoxa\EloquentFilter\Traits\Filterable;
 use Illuminate\Database\Eloquent\Model;
 
@@ -193,7 +194,7 @@ User::filter($request->all())->get();
 ```
 ### SortingFilter
 #### usage:
-`LimitFilter` is an available filter to sort the final result
+`SortingFilter` is an available filter to sort the final result
 
 `/users?sorting=asc`
 

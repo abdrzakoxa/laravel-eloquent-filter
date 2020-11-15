@@ -42,7 +42,10 @@
         "format": "\"vendor/bin/php-cs-fixer\" fix --allow-risky=yes"
     },
     "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
         "sort-packages": true
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }

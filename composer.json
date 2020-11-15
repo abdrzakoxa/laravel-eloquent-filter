@@ -36,6 +36,11 @@
             "Abdrzakoxa\\EloquentFilter\\Test\\": "tests/"
         }
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage",
+        "format": "\"vendor/bin/php-cs-fixer\" fix --allow-risky=yes"
+    },
     "minimum-stability": "dev",
     "prefer-stable": true
 }

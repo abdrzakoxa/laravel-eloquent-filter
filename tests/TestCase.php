@@ -57,7 +57,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
         return User::query()->create([
             'name' => $name,
             'email' => $email,
-            'phone' => $phone
+            'phone' => $phone,
         ]);
     }
 

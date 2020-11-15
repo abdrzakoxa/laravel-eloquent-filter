@@ -21,6 +21,6 @@ class User extends Model
     use Filterable;
 
     protected $fillable = [
-        'name', 'email', 'phone'
+        'name', 'email', 'phone',
     ];
 }

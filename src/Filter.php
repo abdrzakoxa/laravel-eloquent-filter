@@ -77,11 +77,11 @@ class Filter
             $this->data[$name] = $filterInstance->sanitize($this->data[$name] ?? null);
         }
 
-        if ($this->shouldValidate($filterInstance) && !$this->validate($filterInstance, $name)) {
+        if ($this->shouldValidate($filterInstance) && ! $this->validate($filterInstance, $name)) {
             return;
         }
 
-        $filterInstance->handle($this->data[$name] ?? null, $this->builder, ... $parameters);
+        $filterInstance->handle($this->data[$name] ?? null, $this->builder, ...$parameters);
     }
 
     /**
@@ -92,6 +92,7 @@ class Filter
     protected function resolveFilterConstructParameters(string $filter, array $parameters): array
     {
         $resolvedParams = [];
+
         try {
             $reflector = new ReflectionClass($filter);
             if (is_null($constructor = $reflector->getConstructor())) {
@@ -106,7 +107,9 @@ class Filter
                     $resolvedParams[$parameter->getName()] = $parameters[count($resolvedParams)] ?? null;
                 }
             }
-        } catch (ReflectionException $e) {}
+        } catch (ReflectionException $e) {
+        }
+
         return $resolvedParams;
     }
 
@@ -154,6 +157,7 @@ class Filter
 
         if (is_string($validation) || is_array($validation)) {
             $rules = is_string($validation) ? ['value' => $validation] : $validation;
+
             return ! Validator::make([
                 'value' => $this->data[$name] ?? null,
             ], $rules)->fails();
@@ -180,9 +184,10 @@ class Filter
             $parsedFilters[] = [
                 'names' => $names,
                 'class' => $class,
-                'parameters' => $parameters
+                'parameters' => $parameters,
             ];
         }
+
         return $parsedFilters;
     }
 

@@ -35,6 +35,7 @@ trait Filterable
     public function scopeFilter(Builder $builder, array $data, ?array $filters = null): Builder
     {
         $this->filterManager = new Filter($builder, $data, $filters ?: $this->filters);
+
         return $this->filterManager->filter();
     }
 

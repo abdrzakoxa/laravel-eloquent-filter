@@ -69,7 +69,7 @@ class CoreTest extends TestCase
     /** @test */
     public function can_sanitize_before_filter(): void
     {
-        $targetModel = $this->createUser($this->faker->name, ( $username = $this->faker->unique()->userName ) . '@default-company.com', $this->faker->phoneNumber);
+        $targetModel = $this->createUser($this->faker->name, ($username = $this->faker->unique()->userName) . '@default-company.com', $this->faker->phoneNumber);
         $this->createUser($this->faker->name, $this->faker->email, $this->faker->phoneNumber);
 
         $filteredData = (new Filter(User::class, ['email' => $username,], [

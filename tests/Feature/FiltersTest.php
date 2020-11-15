@@ -22,7 +22,7 @@ class FiltersTest extends TestCase
         $searchedData = [
             'created_between' => [
                 $targetModel->created_at->clone()->subDay(),
-                $targetModel->created_at->clone()->addDay()
+                $targetModel->created_at->clone()->addDay(),
             ],
         ];
 
@@ -43,7 +43,7 @@ class FiltersTest extends TestCase
         //// test desc
 
         $searchedData = [
-            'sorting' => 'desc'
+            'sorting' => 'desc',
         ];
         $filteredData = (new Filter(User::class, $searchedData, [
             SortingFilter::class,
@@ -54,7 +54,7 @@ class FiltersTest extends TestCase
         //// test asc
 
         $searchedData = [
-            'sorting' => 'asc'
+            'sorting' => 'asc',
         ];
         $filteredData = (new Filter(User::class, $searchedData, [
             SortingFilter::class,
@@ -88,11 +88,12 @@ class FiltersTest extends TestCase
     protected function executeLimitFilter($limit, ?int $maxLimit = null, ?int $defaultLimit = null)
     {
         $searchedData = [
-            'limit' => $limit
+            'limit' => $limit,
         ];
         if (! is_null($maxLimit) || ! is_null($defaultLimit)) {
             $parameters = rtrim(":$maxLimit,$defaultLimit", ',');
         }
+
         return (new Filter(User::class, $searchedData, [
             LimitFilter::class . ($parameters ?? ''),
         ]))->filter()->get();

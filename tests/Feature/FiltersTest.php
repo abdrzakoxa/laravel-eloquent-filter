@@ -10,13 +10,14 @@ use Abdrzakoxa\EloquentFilter\Test\TestCase;
 use Abdrzakoxa\EloquentFilter\Test\TestClasses\User;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Carbon;
 
 class FiltersTest extends TestCase
 {
     public function test_between_filter(): void
     {
         $this->createUser($this->faker->unique()->name, $this->faker->email, $this->faker->phoneNumber);
-        $this->travelTo(now()->addMonth());
+        Carbon::setTestNow(now()->addMonth());
         $targetModel = $this->createUser($this->faker->unique()->name, $this->faker->email, null);
 
         $searchedData = [
@@ -37,7 +38,7 @@ class FiltersTest extends TestCase
     public function test_sorting_filter(): void
     {
         $firstUser = $this->createUser($this->faker->unique()->name, $this->faker->email, $this->faker->phoneNumber);
-        $this->travelTo(now()->addDay());
+        Carbon::setTestNow(now()->addDay());
         $lastUser = $this->createUser($this->faker->unique()->name, $this->faker->email, null);
 
         //// test desc

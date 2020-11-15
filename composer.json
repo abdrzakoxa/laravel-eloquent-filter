@@ -1,0 +1,41 @@
+{
+    "name": "abderrazzak/laravel-eloquent-filter",
+    "description": "Scalable way to filter laravel model",
+    "keywords": [
+        "laravel",
+        "eloquent",
+        "search",
+        "model",
+        "query",
+        "filter"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Abderrazzak OXA",
+            "email": "abderrazzakoxa@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^7.3|^8.0",
+        "illuminate/database": "^6.0|^7.0|^8.0",
+        "illuminate/support": "^6.0|^7.0|^8.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.4",
+        "friendsofphp/php-cs-fixer": "^2.16",
+        "orchestra/testbench": "^5.0|^6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Abdrzakoxa\\EloquentFilter\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Abdrzakoxa\\EloquentFilter\\Test\\": "tests/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

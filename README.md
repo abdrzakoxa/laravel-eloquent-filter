@@ -194,7 +194,7 @@ User::filter($request->all())->get();
 ```
 ### SortingFilter
 #### usage:
-`SortingFilter` is an available filter to sort the final result
+`LimitFilter` is an available filter to sort the final result
 
 `/users?sorting=asc`
 

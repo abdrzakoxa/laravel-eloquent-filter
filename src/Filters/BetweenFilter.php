@@ -22,7 +22,7 @@ class BetweenFilter
     protected $defaultColumn = 'created_at';
 
     /**
-     * Apply the filter after validation passes
+     * Apply the filter after validation passes & sanitize
      * @param array $value
      * @param  Builder  $builder
      * @param $column
@@ -40,7 +40,7 @@ class BetweenFilter
         return [
             'value' => 'array|size:2',
             'value.0' => 'date',
-            'value.1' => 'date|after:value.0'
+            'value.1' => 'date|after:value.0',
         ];
     }
 }

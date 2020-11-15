@@ -22,7 +22,7 @@ class SortingFilter implements ForceApply
     protected $defaultColumn = 'created_at';
 
     /**
-     * Apply the filter after validation passes
+     * Apply the filter after validation passes & sanitize
      * @param string $value
      * @param  Builder  $builder
      * @param $column

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Builder;
 class NameFilter
 {
     /**
-     * Apply the filter after validation passes
+     * Apply the filter after validation passes & sanitize
      * @param $value
      * @param  Builder  $builder
      */

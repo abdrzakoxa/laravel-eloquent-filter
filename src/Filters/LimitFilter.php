@@ -37,7 +37,7 @@ class LimitFilter implements ForceApply
     }
 
     /**
-     * Apply the filter after validation passes
+     * Apply the filter after validation passes & sanitize
      * @param int $value
      * @param  Builder  $builder
      */

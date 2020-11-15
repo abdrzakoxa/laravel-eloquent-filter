@@ -8,7 +8,7 @@ use Illuminate\Support\Str;
 class EmailFilter
 {
     /**
-     * Apply the filter after validation passes
+     * Apply the filter after validation passes & sanitize
      * @param $value
      * @param  Builder  $builder
      */

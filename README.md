@@ -79,7 +79,7 @@ class UserController extends Controller
 
 ## Installation
 ```
-composer require abderrazzak-oxa/laravel-eloquent-filter
+composer require abdrzakoxa/laravel-eloquent-filter
 ```
 
 ## Usage

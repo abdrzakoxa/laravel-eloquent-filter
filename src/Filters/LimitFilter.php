@@ -48,9 +48,9 @@ class LimitFilter implements ForceApply
 
     /**
      * @param mixed $value
-     * @return bool|string|array
+     * @return int
      */
-    public function sanitize($value)
+    public function sanitize($value): int
     {
         if (is_string($value)) {
             $value = (int) $value;

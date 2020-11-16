@@ -106,7 +106,7 @@ class NameFilter
 
     /**
      * @param mixed $value
-     * @return bool|string|array
+     * @return mixed
      */
     public function sanitize($value)
     {

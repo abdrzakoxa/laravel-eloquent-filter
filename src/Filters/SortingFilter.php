@@ -34,9 +34,9 @@ class SortingFilter implements ForceApply
 
     /**
      * @param mixed $value
-     * @return bool|string|array
+     * @return string
      */
-    public function sanitize($value)
+    public function sanitize($value): string
     {
         return is_string($value) && in_array($value, ['desc', 'asc']) ? $value : $this->defaultSorting;
     }

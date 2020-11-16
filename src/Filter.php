@@ -156,11 +156,27 @@ class Filter
         }
 
         if (is_string($validation) || is_array($validation)) {
-            $rules = is_string($validation) ? ['value' => $validation] : $validation;
+            $rules = is_array($validation) && $this->hasKeyStartsWith($validation, 'value') ? $validation : ['value' => $validation];
 
             return ! Validator::make([
                 'value' => $this->data[$name] ?? null,
             ], $rules)->fails();
+        }
+
+        return false;
+    }
+
+    /**
+     * @param  array  $array
+     * @param  string  $key
+     * @return bool
+     */
+    protected function hasKeyStartsWith(array $array, string $key): bool
+    {
+        foreach (array_keys($array) as $array_key) {
+            if (Str::startsWith($array_key, $key)) {
+                return true;
+            }
         }
 
         return false;

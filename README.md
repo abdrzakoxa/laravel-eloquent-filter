@@ -1,12 +1,12 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://banners.beyondco.de/Laravel%20Eloquent%20Filter.png?theme=light&packageName=abdrzakoxa%2Flaravel-eloquent-filter&pattern=architect&style=style_1&description=Make+your+laravel+eloquent+search+scalable+and+simple&md=1&showWatermark=0&fontSize=125px&images=filter&heights=auto"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://user-images.githubusercontent.com/44305005/100349327-8f6aee80-2fe8-11eb-83fe-11d78e412616.PNG"></a></p>
 
 # Laravel Eloquent Filter
-<p align="center">
+<div>
 <a href="https://github.com/abdrzakoxa/laravel-eloquent-filter/actions"><img src="https://img.shields.io/github/workflow/status/abdrzakoxa/laravel-eloquent-filter/run-tests?label=tests" alt="Tests"></a>
 <a href="https://packagist.org/packages/abdrzakoxa/laravel-eloquent-filter"><img src="https://img.shields.io/packagist/dt/abdrzakoxa/laravel-eloquent-filter" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/abdrzakoxa/laravel-eloquent-filter"><img src="https://img.shields.io/packagist/v/abdrzakoxa/laravel-eloquent-filter" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/abdrzakoxa/laravel-eloquent-filter"><img src="https://img.shields.io/packagist/l/abdrzakoxa/laravel-eloquent-filter" alt="License"></a>
-</p>
+</div>
 Scalable & secure way to filter laravel model
 
 ## Introduction

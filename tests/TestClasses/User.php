@@ -20,6 +20,8 @@ class User extends Model
 {
     use Filterable;
 
+    protected $filters = [];
+
     protected $fillable = [
         'name', 'email', 'phone',
     ];

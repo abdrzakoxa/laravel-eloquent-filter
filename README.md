@@ -49,15 +49,15 @@ class UserController extends Controller
         }
         $roles = [];
         foreach ((array) $request->input('roles') as $role) {
-            if (in_array($role, $allowedRoles)) {
+            if (in_array($role, $allowedRoles, true)) {
                 $roles[] = $role;
             }
         }
         $query->whereHas('roles', function ($q) use ($roles) {
             return $q->whereIn('name', $roles);
         });
-        if ($request->has('limit') && is_numeric($request->get('limit')) && $request->get('limit') < 100) {
-            $limit = (int) $request->get('limit');
+        if ($request->has('limit') && is_numeric($request->input('limit')) && $request->input('limit') < 100) {
+            $limit = (int) $request->input('limit');
         } else {
             $limit = 10;
         }

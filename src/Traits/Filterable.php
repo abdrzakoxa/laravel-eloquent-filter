@@ -17,11 +17,6 @@ use Illuminate\Database\Eloquent\Builder;
 trait Filterable
 {
     /**
-     * @var array
-     */
-    protected $filters = [];
-
-    /**
      * @var Filter
      */
     protected $filterManager;

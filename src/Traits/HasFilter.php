@@ -12,11 +12,6 @@ use Illuminate\Database\Eloquent\Builder;
 trait HasFilter
 {
     /**
-     * @var array
-     */
-    protected $filters = [];
-
-    /**
      * @param  Builder  $builder
      * @param  array  $data
      * @param  array|null  $filters

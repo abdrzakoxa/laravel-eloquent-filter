@@ -56,7 +56,7 @@ class UserController extends Controller
         $query->whereHas('roles', function ($q) use ($roles) {
             return $q->whereIn('name', $roles);
         });
-        if ($request->has('limit') && is_numeric($request->has('limit')) && $request->get('limit') < 100) {
+        if ($request->has('limit') && is_numeric($request->get('limit')) && $request->get('limit') < 100) {
             $limit = (int) $request->get('limit');
         } else {
             $limit = 10;

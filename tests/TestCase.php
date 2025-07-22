@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Orchestra\Testbench\Concerns\WithLaravelMigrations;
 
-class TestCase extends \Orchestra\Testbench\TestCase
+abstract class TestCase extends \Orchestra\Testbench\TestCase
 {
     use WithLaravelMigrations;
 
@@ -34,7 +34,7 @@ class TestCase extends \Orchestra\Testbench\TestCase
             ->assertExitCode(0);
     }
 
-    protected function getEnvironmentSetUp($app)
+    protected function defineEnvironment($app)
     {
         config([
             'database.default' => 'sqlite',

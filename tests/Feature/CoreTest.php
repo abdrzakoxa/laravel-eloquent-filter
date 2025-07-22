@@ -13,8 +13,7 @@ use Illuminate\Support\Arr;
 
 class CoreTest extends TestCase
 {
-    /** @test */
-    public function can_filter(): void
+    public function test_can_filter(): void
     {
         $targetModel = $this->createUser($this->faker->unique()->name, $this->faker->email, null);
         $this->createUser($this->faker->unique()->name, $this->faker->email, $this->faker->phoneNumber);
@@ -31,8 +30,7 @@ class CoreTest extends TestCase
         self::assertTrue($filter->first()->is($targetModel));
     }
 
-    /** @test */
-    public function can_validate_before_filter(): void
+    public function test_can_validate_before_filter(): void
     {
         $this->createUser($this->faker->unique()->name, $this->faker->email, null);
         $this->createUser($this->faker->unique()->name, $this->faker->email, $this->faker->phoneNumber);
@@ -48,8 +46,7 @@ class CoreTest extends TestCase
         self::assertEquals(2, $filter->count());
     }
 
-    /** @test */
-    public function can_use_custom_name(): void
+    public function test_can_use_custom_name(): void
     {
         $targetModel = $this->createUser($this->faker->unique()->name, $this->faker->email, null);
         $this->createUser($this->faker->unique()->name, $this->faker->email, $this->faker->phoneNumber);
@@ -66,8 +63,7 @@ class CoreTest extends TestCase
         self::assertTrue($filteredData->first()->is($targetModel));
     }
 
-    /** @test */
-    public function can_sanitize_before_filter(): void
+    public function test_can_sanitize_before_filter(): void
     {
         $targetModel = $this->createUser($this->faker->name, ($username = $this->faker->unique()->userName) . '@default-company.com', $this->faker->phoneNumber);
         $this->createUser($this->faker->name, $this->faker->email, $this->faker->phoneNumber);
@@ -80,8 +76,7 @@ class CoreTest extends TestCase
         self::assertTrue($filteredData->first()->is($targetModel));
     }
 
-    /** @test */
-    public function can_paginate(): void
+    public function test_can_paginate(): void
     {
         /** @var Paginator $paginate */
         $paginate = User::filter($data = ['name' => $this->faker->name])->simplePaginateFilter();
